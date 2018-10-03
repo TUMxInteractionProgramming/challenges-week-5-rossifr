@@ -195,6 +195,13 @@ li.selected {
     font-size: 24px;
 }
 
+button.primary {
+	height: 36px;
+	min-width: 64px;
+	text-size: 14;
+	border-radius: 8px;
+}
+
 #emojis {
     /* emoji menu */
     /* colors and borders */
