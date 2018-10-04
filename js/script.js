@@ -6,7 +6,7 @@ console.log("App is alive");
 var currentChannel;
 
 /** #7 We simply initialize it with the channel selected by default - sevencontinents */
-currentChannel = sevencontinents;
+currentChannel = "#SevenContinents";
 
 /** Store my current (sender) location
  */
@@ -80,6 +80,9 @@ function selectTab(tabId) {
  * toggle (show/hide) the emojis menu
  */
 function toggleEmojis() {
+    var emojis = require('emojis-list');
+    console.log(emojis[0]);
+    $('#emojis').text(emojis);
     $('#emojis').toggle(); // #toggle
 }
 
