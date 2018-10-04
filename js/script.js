@@ -152,8 +152,20 @@ function byNew(channelOne, channelTwo){
        return 1; 
    }
 }
-//function byTrending(){}
-//function byFavorite(){}
+function byTrending(channelOne, channelTwo){
+    if (channelOne.messageCount > channelTwo.messageCount) {
+       return -1; 
+   } else {
+       return 1; 
+   }
+}
+function byFavorite(channelOne, channelTwo){
+    if (channelOne.starred) {
+       return -1; 
+   } else {
+       return 1; 
+   }
+}
 function listChannels(criterion) {
     // #8 channel onload
     //$('#channels ul').append("<li>New Channel</li>")
@@ -169,13 +181,13 @@ function listChannels(criterion) {
         channels.sort(byNew);
         break;
     case '#tab-trending':
-        //code block
+        channels.sort(byTrending);
         break;
     case '#tab-favorites':
-        //code block
+        channels.sort(byFavorite);
         break;
     default:
-        ;//code block
+        channels.sort(byNew);
     }
 	$('#channels ul').empty();
     for(var i=0; i < channels.length; i++){
