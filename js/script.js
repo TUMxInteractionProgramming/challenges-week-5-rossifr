@@ -106,22 +106,26 @@ function Message(text) {
 }
 
 function sendMessage() {
-    // #8 Create a new message to send and log it.
-    //var message = new Message("Hello chatter");
+    alert($('#message').val());	
+    alert($('#message').val().length);	
+    if($('#message').val().length > 0){
+        // #8 Create a new message to send and log it.
+        //var message = new Message("Hello chatter");
 
-    // #8 let's now use the real message #input
-    var message = new Message($('#message').val());
-    console.log("New message:", message);
+        // #8 let's now use the real message #input
+        var message = new Message($('#message').val());
+        console.log("New message:", message);
 
-    // #8 convenient message append with jQuery:
-    $('#messages').append(createMessageElement(message));
+        // #8 convenient message append with jQuery:
+        $('#messages').append(createMessageElement(message));
 
-    // #8 messages will scroll to a certain point if we apply a certain height, in this case the overall scrollHeight of the messages-div that increases with every message;
-    // it would also scroll to the bottom when using a very high number (e.g. 1000000000);
-    $('#messages').scrollTop($('#messages').prop('scrollHeight'));
+        // #8 messages will scroll to a certain point if we apply a certain height, in this case the overall scrollHeight of the messages-div that increases with every message;
+        // it would also scroll to the bottom when using a very high number (e.g. 1000000000);
+        $('#messages').scrollTop($('#messages').prop('scrollHeight'));
 
-    // #8 clear the message input
-    $('#message').val('');
+        // #8 clear the message input
+        $('#message').val('');
+    }
 }
 
 /**
