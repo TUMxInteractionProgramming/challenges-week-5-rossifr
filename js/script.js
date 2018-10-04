@@ -73,6 +73,7 @@ function selectTab(tabId) {
     $('#tab-bar button').removeClass('selected');
     console.log('Changing to tab', tabId);
     $(tabId).addClass('selected');
+    listChannels(tabId); 
 }
 
 /**
@@ -145,15 +146,15 @@ function createMessageElement(messageObject) {
 }
 
 function byNew(channelOne, channelTwo){
-    if (channelOne.createdOn.getTime() < channelTwo.createdOn.getTime()) {
+    if (channelOne.createdOn.getTime() > channelTwo.createdOn.getTime()) {
        return -1; 
    } else {
        return 1; 
    }
 }
-function byTrending(){}
-function byFavorite(){}
-function listChannels(var criterion) {
+//function byTrending(){}
+//function byFavorite(){}
+function listChannels(criterion) {
     // #8 channel onload
     //$('#channels ul').append("<li>New Channel</li>")
 
@@ -163,7 +164,20 @@ function listChannels(var criterion) {
     $('#channels ul').append(createChannelElement(killerapp));
     $('#channels ul').append(createChannelElement(firstpersononmars));
     $('#channels ul').append(createChannelElement(octoberfest));*/
-    channels.sort(byNew);
+    switch(criterion) {
+    case '#tab-new':
+        channels.sort(byNew);
+        break;
+    case '#tab-trending':
+        //code block
+        break;
+    case '#tab-favorites':
+        //code block
+        break;
+    default:
+        ;//code block
+    }
+	$('#channels ul').empty();
     for(var i=0; i < channels.length; i++){
         $('#channels ul').append(createChannelElement(channels[i]));
     };
