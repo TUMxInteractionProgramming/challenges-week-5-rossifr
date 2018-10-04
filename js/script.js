@@ -144,8 +144,16 @@ function createMessageElement(messageObject) {
         '</div>';
 }
 
-
-function listChannels() {
+function byNew(channelOne, channelTwo){
+    if (channelOne.createdOn.getTime() < channelTwo.createdOn.getTime()) {
+       return -1; 
+   } else {
+       return 1; 
+   }
+}
+function byTrending(){}
+function byFavorite(){}
+function listChannels(var criterion) {
     // #8 channel onload
     //$('#channels ul').append("<li>New Channel</li>")
 
@@ -155,6 +163,7 @@ function listChannels() {
     $('#channels ul').append(createChannelElement(killerapp));
     $('#channels ul').append(createChannelElement(firstpersononmars));
     $('#channels ul').append(createChannelElement(octoberfest));*/
+    channels.sort(byNew);
     for(var i=0; i < channels.length; i++){
         $('#channels ul').append(createChannelElement(channels[i]));
     };
