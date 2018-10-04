@@ -263,6 +263,7 @@ button.accent{
     margin-bottom: 8px;
     margin-left: 2.5%;
     position: relative;
+	box-shadow: 2px;
 }
 
 .message h3 {
