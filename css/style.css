@@ -150,6 +150,23 @@ li.selected {
     border-left: 4px solid #3F51B5;
 }
 
+.fab{
+	background-color:#CDDC39; 
+	width:50px; 
+	height:50px; 
+	border-radius:50px;
+	    position: absolute;
+    bottom: 88px;
+	right:16px;
+    z-index: 2;
+	    text-align: center;
+
+}
+
+.fab i {
+    padding: 16px
+}
+
 /* TAB BAR */
 
 #tab-bar, #chat-bar {
@@ -161,6 +178,7 @@ li.selected {
     display: flex;
     z-index: 1;
 }
+
 
 #tab-bar button /*, #chat-bar button*/ {
 /* background-color: white;

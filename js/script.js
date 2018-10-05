@@ -6,7 +6,7 @@ console.log("App is alive");
 var currentChannel;
 
 /** #7 We simply initialize it with the channel selected by default - sevencontinents */
-currentChannel = sevencontinents;
+currentChannel = channels[1];
 
 /** Store my current (sender) location
  */
@@ -106,8 +106,6 @@ function Message(text) {
 }
 
 function sendMessage() {
-    alert($('#message').val());	
-    alert($('#message').val().length);	
     if($('#message').val().length > 0){
         // #8 Create a new message to send and log it.
         //var message = new Message("Hello chatter");
