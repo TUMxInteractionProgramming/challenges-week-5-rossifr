@@ -6,7 +6,7 @@ console.log("App is alive");
 var currentChannel;
 
 /** #7 We simply initialize it with the channel selected by default - sevencontinents */
-currentChannel = "#SevenContinents";
+currentChannel = sevencontinents;
 
 /** Store my current (sender) location
  */
@@ -126,6 +126,7 @@ function sendMessage() {
         // #8 clear the message input
         $('#message').val('');
     }
+    
 }
 
 /**
